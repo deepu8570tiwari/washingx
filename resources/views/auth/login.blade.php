@@ -15,20 +15,20 @@
          @csrf
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-            <button type="button" class="btn btn-primary btn-floating mx-1">
+            <a href="{{url('login/facebook')}}" class="btn btn-primary btn-floating mx-1">
               <i class="fa fa-facebook-f"></i>
-            </button>
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fa fa-google"></i>
-            </button>
+              </a>
+              <a href="{{url('login/google')}}" class="btn btn-primary btn-floating mx-1">
+                <i class="fa fa-google"></i>
+              </a>
 
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fa fa-twitter"></i>
-            </button>
+              <a href="{{url('login/github')}}" class="btn btn-primary btn-floating mx-1">
+                <i class="fa fa-twitter"></i>
+              </a>
 
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-              <i class="fa fa-linkedin"></i>
-            </button>
+              <a href="" class="btn btn-primary btn-floating mx-1">
+                <i class="fa fa-linkedin"></i>
+              </a>
           </div>
 
           <div class="divider d-flex align-items-center my-4">

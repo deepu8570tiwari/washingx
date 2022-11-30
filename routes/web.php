@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Laravel\Socialite\Facades\Socialite;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,7 +34,17 @@ Route::get('/services','Frontend\FrontendController@service');
 Route::get("/faq",'Frontend\FrontendController@washingfaq');
 Route::get("/pricing",'Frontend\FrontendController@washingpricing');
 Route::get("/pickup",'Frontend\FrontendController@washingpickup');
-
+Route::get("/privacy-policy",'Frontend\FrontendController@washingpprivacy');
+Route::get("/terms-conditions",'Frontend\FrontendController@washingtermcondition');
+//Google Login
+Route::get('/login/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('login.google');
+Route::get('/login/google/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
+//Facebook Login
+Route::get('/login/facebook', [App\Http\Controllers\Auth\LoginController::class, 'redirectToFacebook'])->name('login.facebook');
+Route::get('/login/facebook/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleFacebookCallback']);
+//Github Login
+Route::get('/login/github', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGithub'])->name('login.github');
+Route::get('/login/github/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
 
 Route::middleware(['auth'])->group(function(){
     Route::get('cart','Frontend\Cartcontroller@viewcart');

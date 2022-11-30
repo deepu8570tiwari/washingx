@@ -51,4 +51,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+    function socialProviders()
+    {
+        return $this->hasMany(SocialProvider::class);
+    }
 }

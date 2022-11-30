@@ -66,4 +66,12 @@ class Frontendcontroller extends Controller
       return view('frontend.pickup');
 
    }
+   public function washingpprivacy(){
+
+      return view('frontend.privacy');
+   }
+   public function washingtermcondition(){
+
+      return view('frontend.term-condition');
+   }
 }
