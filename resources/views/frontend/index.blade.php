@@ -1,6 +1,6 @@
 @extends('layouts.front')
     @section('title')
-        Welcome to E-shop
+        Welcome To Washing Basket
     @endsection
     @section('content')
     @include('layouts.inc.slider')

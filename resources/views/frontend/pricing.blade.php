@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('title')
-        Our Services
+        Our Pricing
     @endsection
 @section('content')
 <div class="container">

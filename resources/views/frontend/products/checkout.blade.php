@@ -1,6 +1,6 @@
 @extends('layouts.front')
     @section('title')
-    Checkout
+    My Checkout
     @endsection
     @section('content')
     <div class="py-3 shadow-sm bg-warning border-top">

@@ -35,53 +35,6 @@
       ></a>
     </section>
     <!-- Section: Social media -->
-
-    <!-- Section: Form -->
-    <section class="">
-      <form action="">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="form5Example21" class="form-control" />
-            </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-auto">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
-              Subscribe
-            </button>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </form>
-    </section>
-    <!-- Section: Form -->
-
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
-      </p>
-    </section>
-    <!-- Section: Text -->
-
     <!-- Section: Links -->
   <section class="">
     <div class="container text-center text-md-start mt-5">
@@ -91,8 +44,9 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class=" me-3 text-secondary"></i>Company name
+            <i class=" me-3 text-secondary"></i>Washing Basket
           </h6>
+          <img src="{{url('assets/images/Logo.png')}}" alt="company logo">
           <p>
             Here you can use rows and columns to organize your footer content. Lorem ipsum
             dolor sit amet, consectetur adipisicing elit.
@@ -107,16 +61,16 @@
             Products
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="#!" class="text-reset">Shirt</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="#!" class="text-reset">Pants</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="#!" class="text-reset">Coats</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="#!" class="text-reset">Blazzer</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -128,13 +82,13 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="{{url('faq')}}" class="text-reset">FAQ's</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Settings</a>
+            <a href="{{url('privacy-policy')}}" class="text-reset">Privacy Policy</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Orders</a>
+            <a href="{{url('terms-conditions')}}" class="text-reset">Terms and Condition</a>
           </p>
           <p>
             <a href="#!" class="text-reset">Help</a>
@@ -146,13 +100,13 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fa fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>
+          <p><i class="fa fa-home me-3 text-secondary"></i> Mohali Punjab</p>
           <p>
             <i class="fa fa-envelope me-3 text-secondary"></i>
-            info@example.com
+            itsdeeputiwari@gmail.com
           </p>
-          <p><i class="fa fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
-          <p><i class="fa fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+          <p><i class="fa fa-phone me-3 text-secondary"></i> 8570967249</p>
+          <!--<p><i class="fa fa-print me-3 text-secondary"></i> + 01 234 567 89</p>-->
         </div>
         <!-- Grid column -->
       </div>

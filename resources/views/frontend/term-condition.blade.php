@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('title')
-        Our Services
+        Term's and Conditions
     @endsection
 @section('content')
 <div class="container">

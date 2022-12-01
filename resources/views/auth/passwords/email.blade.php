@@ -1,5 +1,7 @@
 @extends('layouts.front')
-
+@section('title')
+       Email Verification
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center fix-height">
