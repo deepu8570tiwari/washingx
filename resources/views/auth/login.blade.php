@@ -24,13 +24,13 @@
                 <i class="fa fa-google"></i>
               </a>
 
-              <a href="{{url('login/github')}}" class="btn btn-primary btn-floating mx-1">
+              <!--<a href="{{url('login/github')}}" class="btn btn-primary btn-floating mx-1">
                 <i class="fa fa-twitter"></i>
               </a>
 
               <a href="" class="btn btn-primary btn-floating mx-1">
                 <i class="fa fa-linkedin"></i>
-              </a>
+              </a>-->
           </div>
 
           <div class="divider d-flex align-items-center my-4">

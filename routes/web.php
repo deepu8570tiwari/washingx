@@ -29,11 +29,13 @@ Route::post('delete-wishlist-item','Frontend\wishlistController@deletetowishlist
 Route::get('load-cart-data','Frontend\Cartcontroller@cartcount');
 Route::get('load-wishlist-data','Frontend\wishlistController@wishlistcount');
 Route::post('proceed-to-pay','Frontend\Checkoutcontroller@paywithrazorpay');
+Route::post("pickupschedule",'Frontend\PickupscheduleController@washingpickupschedule');
 Route::get('/aboutus','Frontend\FrontendController@aboutus');
 Route::get('/services','Frontend\FrontendController@service');
 Route::get("/faq",'Frontend\FrontendController@washingfaq');
 Route::get("/pricing",'Frontend\FrontendController@washingpricing');
-Route::get("/pickup",'Frontend\FrontendController@washingpickup');
+Route::match(array('get','post'),"pickup",'Frontend\FrontendController@washingpickup');
+
 Route::get("/privacy-policy",'Frontend\FrontendController@washingpprivacy');
 Route::get("/terms-conditions",'Frontend\FrontendController@washingtermcondition');
 //Google Login

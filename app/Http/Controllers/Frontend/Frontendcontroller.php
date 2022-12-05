@@ -5,6 +5,7 @@ use App\Models\Product;
 use App\Models\category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Emailcontact;
 
 class Frontendcontroller extends Controller
 {
@@ -61,10 +62,24 @@ class Frontendcontroller extends Controller
       return view('frontend.pricing');
 
    }
-   public function washingpickup(){
+   public function washingpickup(Request $request){
+      //print_r($_POST); 
+      if(!empty($_POST)){
+         $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'telephone' => 'required|numeric|digits:10',
+            'address' => 'required|max:500',
+            'date' => 'required',
+            'time'=>'required|date_format:H:i',
+         ]);
+         Emailcontact::create($request->all());
+         return redirect()->back()
+                         ->with(['success' => 'Thank you for contact us. we will contact you shortly.']);
+      }
 
-      return view('frontend.pickup');
-
+         return view('frontend.pickup');
+      
    }
    public function washingpprivacy(){
 
