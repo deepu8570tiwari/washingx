@@ -1,6 +1,6 @@
 @extends('layouts.front')
     @section('title')
-       My Cart
+        Cart
     @endsection
     @section('content')
     <div class="py-3 shadow-sm bg-warning border-top">
@@ -49,20 +49,28 @@
                         <button class="btn btn-danger delete-cart-item"><i class="fa fa-trash"></i> Remove</h3>
                     </div>
                 </div>
+                <hr>
               
                 @endforeach
             </div>
-            <div class="cart-footer">
-                <h6>Total: Rs {{$total}}</h6>
-                <a href="{{url('checkout')}}" class="btn btn-outline success float-end"> Proceed to Checkout</a>
+            <div class="card-body">
+                <div class="cart-footer">
+                    <div class="row ">
+                        <div class="col-md-6  my-auto">
+                            <h6>Total: Rs {{$total}}</h6>
+                        </div>
+                        <div class="col-md-6 my-auto">
+                            <a href="{{url('checkout')}}" class="btn btn-danger btn-outline success float-end"> Proceed to Checkout</a>
+                        </div>
+                    </div>
+                </div>
+                @else
+                <div class="card-body text-center ">
+                    <h2>Your cart is Empty</h2>
+                    <a href="{{url('/')}}" class="btn btn-outline-primary float-end"> Continue Shopping</a>
+                </div>
+                @endif
             </div>
-            @else
-            <div class="card-body text-center">
-                <h2>Your cart is Empty</h2>
-                <a href="{{url('/')}}" class="btn btn-outline-primary float-end"> Continue Shopping</a>
-            </div>
-            @endif
-            
          </div>
     </div>
     @endsection

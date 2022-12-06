@@ -3,6 +3,18 @@
     My Order
     @endsection
     @section('content')
+    <div class="py-3 shadow-sm bg-warning border-top">
+    <div class="container">
+        <div class="mb-0">
+            <a href="{{url('/')}}">
+                Home
+            </a>/
+            <a href="{{url('/order-history')}}">
+              Order history
+            </a>
+        </div>
+    </div>
+</div>
     <div class="container">
         <div class="row">
             <div class="col-md-12 mt-3">

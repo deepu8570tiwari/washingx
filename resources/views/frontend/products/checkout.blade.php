@@ -87,6 +87,7 @@
                     <div class="card-body">
                         <h6>Order Details</h6>
                         <hr>
+                        @php $total=0; @endphp
                         @if($cart_item->count()>0)
                         <table class="table table-stripped table-ordered">
                             <thead>
@@ -110,18 +111,20 @@
                                     {{$cart_items->product->selling_price}}
                                 </td>
                             </tr>
-                           
+                            @php $total+=$cart_items->product->selling_price * $cart_items->prod_qty;@endphp
+                            @endforeach
                             </tbody>
                         </table>
-
-                        <h6 class="px-2">Grand Total <span class="float-end">Rs: </span> </h6>
                        
-                        <hr>
+                        
+                        
+                       
+                        <h6 class="px-2">Grand Total <span class="float-end">Rs:{{$total}}</span> </h6>
                         <input type="hidden" name="payment_mode" value="Pay with COD">
                         <button type="submit" class="btn btn-primary float-end w-100 bg-primary">Place Order</button>
                         <button type="button" class="btn btn-primary float-end w-100 mt-3 mb-3 bg-success razor-pay-btn">Pay with Razorpay</button>
                         <div id="paypal-button-container"></div>
-                        @endforeach
+                       
                             @else
                             <h6>No Proudcts in cart</h6>
                             @endif
