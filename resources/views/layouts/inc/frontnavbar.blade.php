@@ -7,30 +7,34 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>
+          </a>
         </li>
         <!--<li class="nav-item">
           <a class="nav-link" href="{{URL('category')}}">Category</a>
         </li>-->
         <li class="nav-item">
-          <a class="nav-link" href="{{URL('aboutus')}}">About Us</a>
+          <a class="nav-link" href="{{URL('aboutus')}}"><i class="fa fa-info-circle" aria-hidden="true"></i>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{URL('services')}}">Services</a>
+          <a class="nav-link" href="{{URL('services')}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a class="nav-link" href="{{URL('pickup')}}">Schedule Pickup</a>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="{{URL('pricing')}}"><i class="fa fa-inr" aria-hidden="true"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{URL('pricing')}}">Pricing</a>
+          <a class="nav-link" href="{{URL('pickup')}}"><i class="fa fa-calendar"></i></a>
         </li>
-
         
         @guest
         
                 @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-sign-in"></i> {{ __('Login') }}</a>
                     </li>
                 @endif
 
@@ -43,12 +47,12 @@
 
             @else
             <li class="nav-item">
-                <a class="nav-link" href="{{URL('cart')}}">Cart
+                <a class="nav-link" href="{{URL('cart')}}"><i class="fa fa-shopping-cart"></i>
                   <span class="badge badge-pill bg-primary cart-count">0</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{URL('wishlist')}}">Wishlist
+                <a class="nav-link" href="{{URL('wishlist')}}"><i class="fa fa-heart-o"></i>
                 <span class="badge badge-pill bg-success wishlist-count">0</span>
                 </a>
               </li>

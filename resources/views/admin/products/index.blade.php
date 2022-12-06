@@ -1,9 +1,13 @@
+@section('title')
+   List Of Products
+@endsection
 @extends('layouts.admin')
 
 @section('content')
 <div class="card">
     <div class="card-header">
         <h4>Products</h4> 
+        <a  href="{{url('/add-products')}}" class="btn btn-danger float-end">Add New Product</a>
     </div>
     <div class="card-body">
         <table class="table">

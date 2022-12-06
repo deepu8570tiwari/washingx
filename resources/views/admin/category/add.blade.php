@@ -1,9 +1,12 @@
 @extends('layouts.admin')
-
+@section('title')
+    List Of Categories
+@endsection
 @section('content')
 <div class="card">
     <div class="card-header">
         <h4> Add Category</h4>
+        <a  href="{{url('/categories')}}" class="btn btn-danger float-end">View Categories</a>
     </div>
     @if ($errors->any())
     <div class="alert alert-danger">

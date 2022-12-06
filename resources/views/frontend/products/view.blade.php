@@ -3,10 +3,6 @@
     {{$products->name}}
     @endsection
     @section('content')
-    <!-- Button trigger modal -->
-
-
-<!-- Modal -->
 
     <div class="py-3 shadow-sm bg-warning border-top">
         <div class="container">

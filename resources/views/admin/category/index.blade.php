@@ -1,9 +1,12 @@
 @extends('layouts.admin')
-
+@section('title')
+    Add Categories
+@endsection
 @section('content')
 <div class="card">
     <div class="card-header">
         <h4>Categories</h4> 
+        <a  href="{{url('/add-category')}}" class="btn btn-danger float-end">Add New Category</a>
     </div>
     <div class="card-body">
         <table class="table">

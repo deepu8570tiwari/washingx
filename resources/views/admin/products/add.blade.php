@@ -1,9 +1,12 @@
 @extends('layouts.admin')
-
+@section('title')
+    Products
+@endsection
 @section('content')
 <div class="card">
     <div class="card-header">
         <h4> Add Products</h4>
+        <a  href="{{url('/products')}}" class="btn btn-danger float-end">View Products</a>
     </div>
     @if ($errors->any())
     <div class="alert alert-danger">
