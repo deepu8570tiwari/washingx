@@ -3,7 +3,7 @@
     My Checkout
     @endsection
     @section('content')
-    <div class="py-3 shadow-sm bg-warning border-top">
+    <div class="py-3   border-top">
         <div class="container">
             <div class="mb-0">
                 <a href="{{url('/')}}">
