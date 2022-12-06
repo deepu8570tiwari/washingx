@@ -27,8 +27,15 @@ height: calc(100% - 73px);
     background: #fff;
     box-shadow: rgba(144, 189, 255, 0.1) 0px 10px 10px -10px;
 }
+.badge {
+    font-size: 0.45em! important;
+}
 .fix-height {
     padding: 100px 0px;
+}
+.card .card-img img {
+    height: 300px;
+    object-fit: contain;
 }
 .footer-section{
     /*position: fixed;*/
