@@ -29,7 +29,9 @@ Orders
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->phone}}</td>
-                                <td><a href="{{url('view-user/'.$user->id)}}" class="btn btn-primary">View</a></td>
+                                <td><a href="{{url('view-user/'.$user->id)}}" class="btn btn-primary">View</a>
+                                <a href="{{url('edit-user/'.$user->id)}}" class="btn btn-success">Edit</a>
+                                <a href="{{url('delete-user/'.$user->id)}}" class="btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -26,7 +26,7 @@ Orders
                         </div>
                         <div class="col-md-4 mt-3">
                             <label for="">Last Name:</label>
-                            <div class="p-2 border">{{$users->lastname}}</div>
+                            <div class="p-2 border">{{$users->lname}}</div>
                         </div>
                         <div class="col-md-4 mt-3">
                             <label for="">Email:</label>
@@ -55,10 +55,6 @@ Orders
                         <div class="col-md-4 mt-3">
                             <label for="">Country :</label>
                             <div class="p-2 border">{{$users->country}}</div>
-                        </div>
-                        <div class="col-md-4 mt-3">
-                            <label for="">Country :</label>
-                            <div class="p-2 border">{{$users->pincode}}</div>
                         </div>
 
                     </div>

@@ -78,7 +78,7 @@ class ProductController extends Controller
             $ext=$file->getClientOriginalExtension();
             $filename=time().'.'.$ext;
             $file->move('assets/uploads/products',$filename);
-            $Product->image=$filename;
+            $products->image=$filename;
         }
         $products->name=$request->input('name');
         $products->slug=$request->input('slug');
