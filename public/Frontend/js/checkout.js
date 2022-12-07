@@ -11,6 +11,7 @@ $(document).ready(function(){
         var state=$('.state').val();
         var country=$('.country').val();
         var pincode=$('.pincode').val();
+        var additional_message=$('.additional_message').val();
         if(!firstname){
             fname_error="First name is required";
             $("#fname_error").html('');
@@ -91,7 +92,15 @@ $(document).ready(function(){
             pincode_error="";
             $("#pincode_error").html('');
         }
-        if(fname_error!="" || lname_error!="" || email_error!="" ||phone_error!="" || address1_error!="" ||address2_error!="" || city_error!="" ||state_error!="" || country_error!="" || pincode_error!=""){
+        if(!additional_message){
+            additional_message="Message field is required";
+            $("#additional_message").html('');
+            $("#additional_message").html(additional_message);
+        }else{
+            additional_message="";
+            $("#additional_message").html('');
+        }
+        if(fname_error!="" || lname_error!="" || email_error!="" ||phone_error!="" || address1_error!="" ||address2_error!="" || city_error!="" ||state_error!="" || country_error!="" || pincode_error!="" ||additional_message!=""){
             return false;
         }else{
             $.ajax({
@@ -108,6 +117,7 @@ $(document).ready(function(){
                     'state':state,
                     'country':country,
                     'pincode':pincode,
+                    'message':additional_message,
                 },
                 success:function(response){
                     var options = {

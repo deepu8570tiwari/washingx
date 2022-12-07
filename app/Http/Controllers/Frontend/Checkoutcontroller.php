@@ -26,6 +26,19 @@ class Checkoutcontroller extends Controller
     }
     public function placeorder(Request $request){
        // print_r($_POST);
+        $validatedData = $request->validate([
+            'fname' => 'required|min:3',
+            'lname' => 'required',
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|numeric|min:10',
+            'address1' => 'required|min:10',
+            'address2' => 'required|min:10',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required',
+            'pincode' => 'required|numeric|min:4',
+            'additional_message' => 'required',
+        ]);
         $order =new Order();
         $order->user_id=Auth::id();
         $order->fname=$request->input('fname');
@@ -40,6 +53,7 @@ class Checkoutcontroller extends Controller
         $order->pincode=$request->input('pincode');
         $order->payment_mode=$request->input('payment_mode');
         $order->payment_id=$request->input('payment_id');
+        $order->message=$request->input('additional_message');
         $total=0;
         $cartItem_total=Cart::where('user_id',Auth::id())->get();
         foreach($cartItem_total as $prodtotal){
@@ -63,14 +77,13 @@ class Checkoutcontroller extends Controller
         if(Auth::user()->address1==NULL){
             $user= User::where('id',Auth::id())->first();
             $user->name=$request->input('fname');
-            $user->lastname=$request->input('lastname');
+            $user->lname=$request->input('lname');
             $user->phone=$request->input('phone');
             $user->address1=$request->input('address1');
             $user->address2=$request->input('address2');
             $user->city=$request->input('city');
             $user->state=$request->input('state');
             $user->country=$request->input('country');
-            $user->pincode=$request->input('pincode');
             $user->update();
         }
         $cartitems=Cart::where('user_id',Auth::id())->get();

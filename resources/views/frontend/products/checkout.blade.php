@@ -1,6 +1,6 @@
 @extends('layouts.front')
     @section('title')
-    My Checkout
+     Checkout
     @endsection
     @section('content')
     <div class="py-3   border-top">
@@ -15,7 +15,17 @@
             </div>
         </div>
     </div>
+   
     <div class="container mt-5">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         <form action="{{url('place-order')}}" method="post">
             {{csrf_field()}}
             
@@ -76,6 +86,11 @@
                                 <label for="">Pin Code</label>
                                 <input type="text" class="form-control pincode" name="pincode" placeholder="Enter Pin Code" value="{{Auth::user()->pincode}}">
                                 <span id="pincode_error" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <label for="">Message</label>
+                                <textarea class="form-control additional_message" name="additional_message" placeholder="Additional Message" value=""></textarea>
+                                <span id="additional_message" class="text-danger"></span>
                             </div>
                         </div>
                     </div>

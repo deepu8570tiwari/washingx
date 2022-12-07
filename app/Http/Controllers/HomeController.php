@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Product;
+use App\Models\category;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $featured_products=Product::where('trending','1')->take('15')->get();
+        $featured_category=Category::where('popular','1')->take('15')->get();
+        return view('home',compact('featured_products','featured_category'));
+        //return view('home');
     }
 }
