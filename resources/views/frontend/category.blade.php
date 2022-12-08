@@ -30,7 +30,4 @@
         </div>
     </div>
     @endsection
-
-    <style>
-
-    </style>
+    @include('layouts.front-footer')

@@ -36,6 +36,7 @@ Route::get("/faq",'Frontend\FrontendController@washingfaq');
 Route::get("/pricing",'Frontend\FrontendController@washingpricing');
 Route::match(array('get','post'),"pickup",'Frontend\FrontendController@washingpickup');
 
+
 Route::get("/privacy-policy",'Frontend\FrontendController@washingpprivacy');
 Route::get("/terms-conditions",'Frontend\FrontendController@washingtermcondition');
 //Google Login
@@ -49,6 +50,12 @@ Route::get('/login/github', [App\Http\Controllers\Auth\LoginController::class, '
 Route::get('/login/github/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleGithubCallback']);
 
 Route::middleware(['auth'])->group(function(){
+
+    Route::get('my-profile/{id}','Frontend\UserController@edituser');
+    Route::get('my-profile','Frontend\UserController@viewuser');
+    Route::put('edit-profile/{id}','Frontend\UserController@updateuser');
+    Route::get('delete-profile/{id}','Frontend\UserController@destroyuser');
+
     Route::get('cart','Frontend\Cartcontroller@viewcart');
     Route::get('checkout','Frontend\Checkoutcontroller@index');
     //Route::get('place-order','Frontend\Checkoutcontroller@placeorder');
@@ -61,7 +68,6 @@ Route::middleware(['auth'])->group(function(){
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth','isAdmin'])->group(function () {
-
    Route::get('/dashboard','Admin\FrontendController@index');
    Route::get('/categories','Admin\CategoryController@index');
    Route::get('/add-category','Admin\CategoryController@add');
@@ -83,8 +89,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
    Route::get('view-user/{id}','Admin\dashboarduserController@viewuser');
    Route::get('edit-user/{id}','Admin\dashboarduserController@edituser');
    Route::put('update-user/{id}','Admin\dashboarduserController@updateuser');
-   Route::get('delete-user/{id}','Admin\dashboarduserController@deleteuser');
-   
+   Route::get('delete-user/{id}','Admin\dashboarduserController@destroyuser');
 });
 
 Auth::routes();

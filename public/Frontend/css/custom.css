@@ -529,6 +529,9 @@ a.text-white.me-4 {
 #user_data label{
   width: 80px;
 }
+#users_data label{
+  width: 100px;
+}
 .custom-header div#navbarNav ul li a {
     color: #000;
     font-size: 20px;

@@ -23,7 +23,6 @@ class dashboarduserController extends Controller
         return view('admin.users.edit',compact('users'));
     }
     public function updateuser(Request $request, $id){
-        //echo $id.'dfdsfsdgd';
         $users=User::find($id);
         $users->name=$request->input('firstname');
         $users->lname=$request->input('lastname');
@@ -36,6 +35,11 @@ class dashboarduserController extends Controller
         $users->country=$request->input('country');
         $users->update();
         return redirect('/users')->with('status','Admin update user successfully');
+    }
+    public function destroyuser($id){
+        $users=User::find($id);
+        $users->delete();
+        return redirect('/users')->with('status','User deleted successfully');
     }
     
 }

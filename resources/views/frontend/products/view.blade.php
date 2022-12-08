@@ -118,6 +118,7 @@
     </form>
   </div>
 </div> 
+@include('layouts.front-footer')
     @endsection
 
     @section('scripts')

@@ -49,4 +49,5 @@
             </div>
         </div>
     </div>
+    @include('layouts.front-footer')
     @endsection
