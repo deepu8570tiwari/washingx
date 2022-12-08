@@ -23,7 +23,7 @@ class UserController extends Controller
         return view('frontend.users.index',compact('users'));
     }
     public function edituser($id){
-        $users=User::find($id);
+        $users=User::find(Auth::id());
         return view('frontend.users.edit',compact('users'));
     }
     public function updateuser(Request $request, $id){
