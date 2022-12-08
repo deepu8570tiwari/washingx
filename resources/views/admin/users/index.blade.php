@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-Orders
+User's Listing
 @endsection
 @section('content')
 <div class="container">

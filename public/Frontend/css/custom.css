@@ -532,6 +532,11 @@ a.text-white.me-4 {
 #users_data label{
   width: 100px;
 }
+.btn-content{
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
 .custom-header div#navbarNav ul li a {
     color: #000;
     font-size: 20px;

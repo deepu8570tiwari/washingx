@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('title')
-Orders
+Edit Profile
 @endsection
 @section('content')
 <div class="py-3   border-top">
@@ -62,7 +62,11 @@ Orders
                             <label for="">Country :</label>
                             <div class="p-2 border">{{$users->country}}</div>
                         </div>
-
+                        
+                    </div>
+                    <div class="col-md-12 mt-3 btn-content">
+                            <a href="{{url('/my-profile/'.$users->id)}}" class="btn btn-success">Edit</a>
+                            <a href="{{url('/delete-profile/'.$users->id)}}" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             </div>
