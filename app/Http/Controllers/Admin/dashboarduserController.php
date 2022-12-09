@@ -10,7 +10,9 @@ class dashboarduserController extends Controller
 {
     public function index(){
         $users=User::all();
+       
         return view('admin.users.index',compact('users'));
+        
     }
     public function viewuser($id){
         //echo $id.'dfdsfsdgd';
@@ -41,5 +43,4 @@ class dashboarduserController extends Controller
         $users->delete();
         return redirect('/users')->with('status','User deleted successfully');
     }
-    
 }

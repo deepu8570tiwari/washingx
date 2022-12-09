@@ -10,9 +10,6 @@
           <a class="nav-link active" aria-current="page" href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>
           </a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="{{URL('category')}}">Category</a>
-        </li>-->
         <li class="nav-item">
           <a class="nav-link" href="{{URL('aboutus')}}"><i class="fa fa-info-circle" aria-hidden="true"></i>
           </a>
@@ -20,9 +17,6 @@
         <li class="nav-item">
           <a class="nav-link" href="{{URL('services')}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>
         </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="{{URL('pickup')}}">Schedule Pickup</a>
-        </li>-->
         <li class="nav-item">
           <a class="nav-link" href="{{URL('pricing')}}"><i class="fa fa-inr" aria-hidden="true"></i></a>
         </li>

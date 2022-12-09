@@ -16,10 +16,6 @@ Orders
                 <hr>
                 <div class="card-body">
                     <div class="row">
-                         <div class="col-md-4 mt-3">
-                            <label for="">Role:</label>
-                            <div class="p-2 border">{{$users->role_as=="0"?'User':'Admin'}}</div>
-                        </div>
                         <div class="col-md-4 mt-3">
                             <label for="">First Name:</label>
                             <div class="p-2 border">{{$users->name}}</div>

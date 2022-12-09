@@ -24,6 +24,7 @@ User's Listing
                     </thead>
                     <tbody>
                         @foreach($users as $user)
+                            @if($user->role_as=="0")
                             <tr>
                                 <td>{{$user->id}}</td>
                                 <td>{{$user->name}}</td>
@@ -33,6 +34,7 @@ User's Listing
                                 <a href="{{url('edit-user/'.$user->id)}}" class="btn btn-success">Edit</a>
                                 <a href="{{url('delete-user/'.$user->id)}}" class="btn btn-danger">Delete</a></td>
                             </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

@@ -9,7 +9,7 @@ Orders
                 <div class="card">
                     <div class="card-header bg-primary">
                         <h4 class="text-white">Order View
-                            <a href="{{url('my-order')}}" class="btn btn-warning text-white float-end">Back</a>
+                            <a href="{{url('orders')}}" class="btn btn-warning text-white float-end">Back</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -61,6 +61,9 @@ Orders
                                 </table>
                                 <h4 class="px-2">Grand Total:<span class="float-end">Rs: {{$orders->total_price}}</span></h4>
                                 <label>Order Status</label>
+                                @if($orders->status=='1')
+                                <h6 style="color:red;">This Order has been completed no further action is required</h6>
+                                @else
                                 <form action="{{url('update-order/'.$orders->id)}}" method="POST">
                                     @csrf
                                     @method('PUT')
@@ -72,6 +75,8 @@ Orders
                                     </select>
                                     <button type="submit" class="btn btn-primary mt-3 float-end">Update</button>
                                 </form>
+                               
+                               @endif
                             </div>
                         </div>
                     </div>
