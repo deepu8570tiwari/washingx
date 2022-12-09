@@ -45,9 +45,12 @@ height: calc(100% - 73px);
 }
 body {
 	background: #e6e6e6;
-	font-family: Rubik;
 }
-
+.whatsapp-chat{
+  bottom:10px;
+  left:10px;
+  position:fixed;
+}
 .main-head {
 	background: #0D1440;
 	box-shadow: 0px 1px 10px -6px rgba(0, 0, 0, .15);
