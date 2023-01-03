@@ -51,7 +51,10 @@
                                         </button>
                                         <div class="p-item">
                                             <img src="{{url('assets/uploads/products')}}/{{$categories->image}}" class="product-small-image" />
-                                            <span class="product-name">{{$categories->Category->name}}</span>
+                                            <div class="product_price">
+                                                <span class="product-name">{{$categories->Category->name}}</span>
+                                                <span class="product-price">₹ {{$categories->selling_price}}</span>
+                                            </div>
                                             <div class="quantity-text">
                                                 <input type="text" value="0" name="quantity" class="current_quantity qty-input">
                                             </div>
@@ -66,17 +69,31 @@
                                 @endforeach
                                 <div class="col-md-6">
                                     <div class="add-product-main">
-                                        <a class="p-item" href="javascript:void(0)">
+                                        <div class="p-item">
                                             <img src="{{url('assets/images')}}/img1.png" class="product-small-image" />
-                                            <span class="product-name">Other</span>
-                                        </a>
+                                            <div class="product_price">
+                                                <span class="product-name">Others</span>
+                                                <span class="product-price" ><i class="fas fa-plus"></i></span>
+                                            </div>
+                                             <div class="quantity-text">
+                                                <input type="text" value="0" name="quantity" class="current_quantity qty-input"  style="visibility:hidden">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="main-checkout-button mb-3">
-                            <a href="#" class="checkout_btn btn"><i class="fas fa-plus"></i><span>Check out</span></a>
+                            @if($cartItem->count()>0)
+                             @php $total=0; @endphp
+                                @foreach($cartItem as $cart)
+                                @php $total+=$cart->product->selling_price * $cart->prod_qty; @endphp
+                                @endforeach
+                                <a href="#" class="checkout_btn btn"><i class="fa fa-shopping-cart"></i><span>CheckOut <b>₹ {{$total}}</b></span></a>
+                            @else
+                            <a href="#" class="checkout_btn btn"><i class="fa fa-shopping-cart"></i><span>CheckOut </span></a>
+                            @endif
                         </div>
                     </div>
                 </div>

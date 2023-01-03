@@ -89,7 +89,7 @@ $(document).ready(function(){
             $(this).closest('.product_data').find('.qty-input').val(value);
         }
         addtocartbutton (prod_id,inc_value);
-
+        window.location.reload ();
     })
     $('.decreament-value').click(function(e){
         e.preventDefault();
@@ -103,8 +103,7 @@ $(document).ready(function(){
             $(this).closest('.product_data').find('.qty-input').val(value);
         }
         addtocartbutton (prod_id, inc_value);
-
-
+        window.location.reload ();
     })
     $('.delete-cart-item').click(function(e){
         e.preventDefault();

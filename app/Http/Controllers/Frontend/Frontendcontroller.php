@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\frontend;
+use App\Models\Cart;
 use App\Models\Product;
 use App\Models\category;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Emailcontact;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class Frontendcontroller extends Controller
 {
@@ -13,7 +15,8 @@ class Frontendcontroller extends Controller
       $featured_products=Product::where('trending','1')->take('15')->get();
       $featured_category=Category::where('popular','1')->take('15')->get();
       $category=Category::where('status','1')->get();
-      return view('frontend.index',compact('featured_products','featured_category','category'));
+      $cartItem=Cart::where('user_id',Auth::id())->get();
+      return view('frontend.index',compact('featured_products','featured_category','category','cartItem'));
    }
    public function category(){
       $category=Category::where('status','0')->get();
