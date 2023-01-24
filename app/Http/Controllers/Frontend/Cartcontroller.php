@@ -68,4 +68,14 @@ class Cartcontroller extends Controller
         $cart_count=Cart::where('user_id',Auth::id())->count();
         return response()->json(['code'=>$cart_count]);
     }
+    public function finalproductprice(){
+      $cartItem=Cart::where('user_id',Auth::id())->get();
+       if($cartItem->count()>0){
+            $total=0;
+            foreach($cartItem as $cart){
+               $total+=$cart->product->selling_price * $cart->prod_qty;
+            }
+         }
+         return response()->json(['final_price'=>$total]);
+   }
 }

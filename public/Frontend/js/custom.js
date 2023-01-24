@@ -36,8 +36,17 @@ $(document).ready(function(){
             },
             dataType: '',
             success: function (response) {
-            //swal ('', response.status, 'success');
             loadcart ();
+            get_final_price ();
+            },
+        });
+    }
+    function get_final_price(){
+        $.ajax ({
+            method: 'GET',
+            url: '/final-price',
+            success: function (response) {
+              $(".final_price b").html('₹' +response.final_price);
             },
         });
     }
@@ -89,11 +98,10 @@ $(document).ready(function(){
             $(this).closest('.product_data').find('.qty-input').val(value);
         }
         addtocartbutton (prod_id,inc_value);
-        window.location.reload ();
+       
     })
     $('.decreament-value').click(function(e){
         e.preventDefault();
-       
         var dc_value=$(this).closest('.product_data').find('.qty-input').val();
         var prod_id = $ (this).closest ('.product_data').find ('.prod_id').val ();
         var value=parseInt(dc_value,10);
@@ -102,8 +110,7 @@ $(document).ready(function(){
             value--;
             $(this).closest('.product_data').find('.qty-input').val(value);
         }
-        addtocartbutton (prod_id, inc_value);
-        window.location.reload ();
+        addtocartbutton(prod_id, dc_value);
     })
     $('.delete-cart-item').click(function(e){
         e.preventDefault();

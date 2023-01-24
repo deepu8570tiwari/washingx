@@ -22,6 +22,7 @@ Route::get('view-category/{slug}','Frontend\FrontendController@viewcategory');
 Route::get('category/{cat_slug}/{prod_slug}','Frontend\FrontendController@productview');
 Auth::routes();
 Route::post('add-to-cart','Frontend\Cartcontroller@addProduct');
+Route::get('final-price','Frontend\Cartcontroller@finalproductprice');
 Route::post('delete-cart-item','Frontend\Cartcontroller@deleteProduct');
 Route::post('update-cart-item','Frontend\Cartcontroller@updateProduct');
 Route::post('add-to-wishlist','Frontend\wishlistController@addtowishlist');

@@ -7,7 +7,7 @@
     <div class="shopping-cart-section">
         <div class="container mt-5">
             <div class="row">
-                <div class="col-lg-6">
+                <!--<div class="col-lg-6">
                     <div id="carouselExampleIndicators" class="py-3 carousel slide product-slider" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -34,8 +34,8 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                </div>
-                <div class="col-lg-6 text-center">
+                </div>-->
+                <div class="col-lg-12 text-center">
                     <div class="products-detail">
                         <h2 class="mb-4 fonts-weight-bold">What do you want to iron?</h2>
                         <div class="product-top-image">
@@ -44,7 +44,7 @@
                         <div class="product-listing my-5 ">
                             <div class="row m-0">
                                 @foreach($featured_products as $categories)
-                                <div class="col-md-6 ">
+                                <div class="col-md-4">
                                     <div class="add-product-main product_data">
                                         <button class="btn-quantity minus changeQuantity decreament-value">
                                             <i class="fas fa-minus "></i>
@@ -62,12 +62,12 @@
                                         <button class="btn-quantity plus changeQuantity increament-btn">
                                             <i class="fas fa-plus"></i>
                                         </button>
-                                        <input type="hidden" value="{{$categories->id}}}" class="prod_id">
-                                        <input type="hidden" class="quantity_field" name="quantity" data-price="8.50" value="0">
+                                        <input type="hidden" value="{{$categories->id}}" class="prod_id">
+                                        <input type="hidden" class="quantity_field" name="quantity" data-price="" value="0">
                                     </div>
                                 </div>
                                 @endforeach
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="add-product-main">
                                         <div class="p-item">
                                             <img src="{{url('assets/images')}}/img1.png" class="product-small-image" />
@@ -90,9 +90,9 @@
                                 @foreach($cartItem as $cart)
                                 @php $total+=$cart->product->selling_price * $cart->prod_qty; @endphp
                                 @endforeach
-                                <a href="#" class="checkout_btn btn"><i class="fa fa-shopping-cart"></i><span>CheckOut <b>₹ {{$total}}</b></span></a>
+                                <a href="#" class="checkout_btn btn"><i class="fa fa-shopping-cart"></i><span class="final_price">CheckOut <b>₹ {{$total}}</b></span></a>
                             @else
-                            <a href="#" class="checkout_btn btn"><i class="fa fa-shopping-cart"></i><span>CheckOut </span></a>
+                            <a href="#" class="checkout_btn btn"><i class="fa fa-shopping-cart"></i><span class="final_price">CheckOut <b></b></span></a>
                             @endif
                         </div>
                     </div>
