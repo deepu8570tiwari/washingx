@@ -181,8 +181,8 @@
     <div class="py-5">
         <div class="container">
             <div class="row">
-                <h2>Trending products</h2>
-                <div class="owl-carousel owl-theme">
+                <h2>Trending Services</h2>
+                <div class="">
                     @foreach($featured_category as $category)
                     <div class="item">
                         <a href="{{url('view-category',$category->slug)}}">

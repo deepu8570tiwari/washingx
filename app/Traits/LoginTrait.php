@@ -60,7 +60,7 @@ trait LoginTrait
         $validator = Validator::make($data, $rules);
 
         if (!$validator->fails()) {
-            return "dscsd";
+            //return "dscsd";
             if (Auth::attempt($credentials)) {
 
                 return "user login successfully";
@@ -76,8 +76,8 @@ trait LoginTrait
             }
 
         } else {
-            return 'cdf';
-          //  return redirect('login')->withErrors($validator->errors())->withInput();
+          //  return 'cdf';
+            return redirect('login')->withErrors($validator->errors())->withInput();
         }
 
 

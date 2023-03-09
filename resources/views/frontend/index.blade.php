@@ -127,18 +127,18 @@
     <div class="py-5">
         <div class="container">
             <div class="row">
-                <h2>Trending products</h2>
+                <h2>Trending Services</h2>
                 <div class="owl-carousel owl-theme">
                     @foreach($featured_category as $category)
                     <div class="item">
                         <a href="{{url('view-category',$category->slug)}}">
                             <div class="card">
-                                <div class="card-img">
+                                <div class="card-img1">
                                     <img src="{{asset('assets/uploads/category/'.$category->image)}}" alt="Product image" >
                                     </div>
                                     <div class="card-body">
                                     <h5>{{$category->name}} </h5>
-                                    <p>{{$category->description}}</p>
+                                    <p>{{$category->description}} </p>
                                 </div>
                             </div>
                         </a>

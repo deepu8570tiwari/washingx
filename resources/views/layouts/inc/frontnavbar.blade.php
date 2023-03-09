@@ -7,21 +7,21 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url('/')}}"><i class="fa fa-home" aria-hidden="true"></i>
+          <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{URL('aboutus')}}"><i class="fa fa-info-circle" aria-hidden="true"></i>
+          <a class="nav-link" href="{{URL('aboutus')}}">About Us
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{URL('services')}}"><i class="fa fa-wrench" aria-hidden="true"></i></a>
+          <a class="nav-link" href="{{URL('services')}}">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{URL('pricing')}}"><i class="fa fa-inr" aria-hidden="true"></i></a>
+          <a class="nav-link" href="{{URL('pricing')}}">Pricing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{URL('pickup')}}"><i class="fa fa-calendar"></i></a>
+          <a class="nav-link" href="{{URL('pickup')}}">Scehdule Pickup</a>
         </li>
         
         @guest
